@@ -1,0 +1,97 @@
+<html>
+    <head><title> add data</title>
+        <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="dist/css/adminlte.min.css">
+        <!-- Google Font: Source Sans Pro -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"></head>
+    <body>
+        <div class="wrapper">
+		
+            <!-- Navbar -->
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"> 
+                                               <i class="fas fa-bars"></i></a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                    <a href="/" class="nav-link">Home</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.navbar -->
+            
+            <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+                <a href="#" class="brand-link">
+                  <img src="FFlogo.jpg"
+                       alt="Fashion Feet Logo"
+                       class="brand-image img-circle elevation-3">
+                  <span class="brand-text font-weight-light">Fashion Feet</span>
+                </a>
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <nav class="mt-2">
+                      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item">
+                        <a href="/create" class="nav-link">
+                          <i class="nav-icon far fa-circle text-info"></i>
+                          <p>Add Product</p>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="/salesdetails" class="nav-link">
+                          <i class="nav-icon far fa-circle text-info"></i>
+                          <p class="text">Sales Details</p>
+                        </a>
+                        </li>
+                        <!-- <li class="nav-item">
+                        <a href="/updatesales" class="nav-link">
+                          <i class="nav-icon far fa-circle text-info"></i>
+                          <p class="text">Update Sales</p>
+                        </a>
+                        </li> -->
+                        
+                      </ul>
+                    </nav>
+                        </div>
+            
+                    </aside>
+            
+            <div class="content-wrapper">
+                
+                <section class="content-header">
+                    <h1>Fashion Feet Inventory Management</h1>
+                </section>
+                
+                <section class="content">
+<h3> Come here to update data to the stock</h3>
+<form action="/updatedata" method="post">
+  <p> old stock: <%= data.quantity%> </p>
+    <lable>new stock</lable>&nbsp;
+    <input type="text" placeholder="new stock" name='quantity'><br><br>
+    <p> old cost price: <%= data.cost_price %> </p>
+    <lable> new Cost price</lable>&nbsp;
+    <input type="text" placeholder="new Cost price" name='cost_price'><br><br>
+
+    <p> old selling price: <%= data.selling_price %> </p>
+    <lable>new selling price</lable>&nbsp;
+    <input type="text" placeholder="new selling price" name='selling_price'><br><br>
+   
+  
+    <input type="hidden" name="productid" value="<%= data %>">
+    <button class="btn btn-info btn-sm" type="submit" name="submit"><i class="fas fa-pencil-alt"></i> Edit</button>
+                
+    
+    </form>
+    <a href="/">homepage</a>
+                </section>
+            </div>
+            
+        </div>
+        <script src="../../plugins/jquery/jquery.min.js"></script>
+        <script src="../../dist/js/adminlte.min.js"></script>
+    </body>
+</html>
